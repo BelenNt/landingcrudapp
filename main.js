@@ -21,7 +21,27 @@ function crear(e) {
         formularios.push(formulario)
         localStorage.setItem("Formularios", JSON.stringify(formularios))
     }
+    leer();
     document.getElementById("gymapp").reset();
-    e.preventDefault();
     console.log("Cliente Guardado Correctamente")
+    e.preventDefault()
 }
+
+//función leer
+function leer() {
+    let formularios = JSON.parse(localStorage.getItem("Formularios"));
+    document.getElementById("tbody").innerHTML = ""
+    for (let i = 0; i < formularios.length; i++) {
+        let cliente = formularios[i].cliente
+        let descripcion = formularios[i].descripcion
+        let precio = formularios[i].precio
+
+        document.getElementById("tbody").innerHTML +=
+            `<tr>
+             <td>${cliente}</td>
+             <td>${descripcion}</td>
+             <td>${precio}</td>
+            </tr>`
+    }
+}
+leer()

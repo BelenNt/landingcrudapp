@@ -138,7 +138,7 @@ function vistaPrincipal() {
     </div>
     <div class="col-md-6">
         <table class="table">
-            <thead class="table-light">
+            <thead class="table-black">
               <tr>
                 <th scope="col">Cliente</th>
                 <th scope="col">Descripcion</th>
